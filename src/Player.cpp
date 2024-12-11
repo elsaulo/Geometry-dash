@@ -28,7 +28,3 @@ void Player::render(sf::RenderWindow& window) {
 sf::FloatRect Player::getBounds() const {
     return shape.getGlobalBounds();
 }
-
-void Player::resetPosition(float x, float y) {
-    shape.setPosition(x, y);
-}

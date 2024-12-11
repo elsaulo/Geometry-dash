@@ -10,8 +10,6 @@ public:
     void jump(float jumpStrength);
     void render(sf::RenderWindow& window);
     sf::FloatRect getBounds() const;
-    void resetPosition(float x, float y);
-
 private:
     sf::RectangleShape shape;
     float velocityY;
