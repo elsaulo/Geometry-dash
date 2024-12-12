@@ -1,0 +1,64 @@
+@startuml
+
+class Game {
+    - Background background
+    - Player player
+    - std::vector<Platform> platforms
+    - std::vector<Obstacle> obstacles
+    - sf::RenderWindow window
+    - float gravity
+    - float jumpStrength
+    - float obstacleSpeed
+    - bool isJumping
+    - sf::Vector2f playerInitialPosition
+    + Game()
+    + void run()
+    + void processEvents()
+    + void update()
+    + void render()
+    + void checkCollisions()
+}
+
+class Background {
+    - sf::Texture texture
+    - sf::Sprite sprite
+    + Background(string filepath, float width, float height)
+    + void render(sf::RenderWindow &window)
+}
+
+class Player {
+    - sf::RectangleShape shape
+    - sf::Vector2f velocity
+    + Player(float width, float height, float initialX)
+    + void jump(float strength)
+    + void update(float gravity, bool &isJumping)
+    + void render(sf::RenderWindow &window)
+    + void setPosition(float x, float y)
+    + sf::FloatRect getBounds()
+    + void setVelocityY(float velocity)
+}
+
+class Platform {
+    - sf::RectangleShape shape
+    + Platform(float width, float height, float posX, float posY)
+    + void render(sf::RenderWindow &window)
+    + void move(float speed)
+    + sf::FloatRect getBounds()
+    + void reset(float newX)
+}
+
+class Obstacle {
+    - sf::RectangleShape shape
+    + Obstacle(float width, float height, float posX, float posY)
+    + void render(sf::RenderWindow &window)
+    + void move(float speed)
+    + sf::FloatRect getBounds()
+    + void reset(float newX)
+}
+
+Game --> Background
+Game --> Player
+Game --> Platform
+Game --> Obstacle
+
+@enduml

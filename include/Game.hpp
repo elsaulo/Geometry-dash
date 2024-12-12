@@ -16,7 +16,6 @@ private:
     void update();
     void render();
     void checkCollisions();
-
     sf::RenderWindow window;
     Player player;
     std::vector<Platform> platforms;
@@ -33,7 +32,7 @@ Game::Game()
     : window(sf::VideoMode(1000, 1000), "Geometry Dash"),
       player(50.0f, 100.0f, 950.0f), // Inicializar el jugador en la parte inferior de la ventana
       gravity(0.4f), jumpStrength(-10.0f), obstacleSpeed(5.0f), isJumping(false),
-      playerInitialPosition(player.getPosition()) // Guardar posición inicial del jugador
+      playerInitialPosition(player.getPosition())
 {
     window.setFramerateLimit(60);
 
