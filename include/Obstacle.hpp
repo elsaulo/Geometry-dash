@@ -10,7 +10,6 @@ public:
     void render(sf::RenderWindow& window);
     sf::FloatRect getBounds() const;
     void reset(float startX);
-
 private:
     sf::RectangleShape shape;
 };
@@ -22,7 +21,7 @@ Obstacle::Obstacle(float width, float height, float startX, float startY) {
 }
 
 void Obstacle::move(float speed) {
-    shape.move(-speed, 0);
+    shape.move(-speed, 0.0f);
 }
 
 void Obstacle::render(sf::RenderWindow& window) {
