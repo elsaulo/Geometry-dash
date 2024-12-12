@@ -1,4 +1,7 @@
 # Juego Geometry dash
+#Creadores:
+#Saulo Jaziel Tejeda Valle 23310404
+#Elsy Valeria Cuevas de la Torre 23310379
 # Instructivo para el Proyecto Geometry Dash
 
 ## Introducción
